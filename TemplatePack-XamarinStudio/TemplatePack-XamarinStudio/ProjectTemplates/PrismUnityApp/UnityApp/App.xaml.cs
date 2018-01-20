@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Practices.Unity;
+﻿using Prism;
 using Prism.Unity;
+using Prism.Ioc;
 using ${Namespace}.Views;
+using ${Namespace}.ViewModels;
 
 namespace ${Namespace}
 {
 	public partial class App : PrismApplication
 	{
+        // This ctor is used by the designer preview
+        public App() : this(null) { }
+
 		public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
 		protected override void OnInitialized()
@@ -19,10 +20,10 @@ namespace ${Namespace}
 			NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
 		}
 
-		protected override void RegisterTypes()
-		{
-			Container.RegisterTypeForNavigation<MainPage>();
-		}
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<MainPage>();
+        }
 	}
 }
 

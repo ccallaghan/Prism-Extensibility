@@ -1,15 +1,8 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-
-using Prism.Unity;
-using Microsoft.Practices.Unity;
+using Prism;
+using Prism.Ioc;
 
 namespace ${Namespace}
 {
@@ -28,7 +21,7 @@ namespace ${Namespace}
 
 	public class AndroidInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(IUnityContainer container)
+        public void RegisterTypes(IContainerRegistry container)
         {
 
         }
